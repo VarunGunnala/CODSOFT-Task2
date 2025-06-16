@@ -1,0 +1,100 @@
+import sys
+
+def add(x, y):
+    """Adds two numbers and returns the sum."""
+    return x + y
+
+def subtract(x, y):
+    """Subtracts two numbers and returns the difference."""
+    return x - y
+
+def multiply(x, y):
+    """Multiplies two numbers and returns the product."""
+    return x * y
+
+def divide(x, y):
+    """
+    Divides two numbers and returns the quotient.
+    Handles division by zero by returning a specific error string.
+    """
+    if y == 0:
+        return "Error: Division by zero is not allowed."
+    return x / y
+
+def power(x, y):
+    """Raises x to the power of y and returns the result."""
+    return x ** y
+
+def modulus(x, y):
+    """Returns the remainder of the division of x by y."""
+    if y == 0:
+        return "Error: Modulus by zero is not allowed."
+    return x % y
+
+def get_numeric_input(prompt):
+    """
+    Prompts the user for a numeric input and validates it.
+    Keeps prompting until a valid float is entered.
+    """
+    while True:
+        try:
+            value = float(input(prompt))
+            return value
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
+def display_menu():
+    """Displays the calculator's operation menu to the user."""
+    print("\n--- Calculator Menu ---")
+    print("1. Add (+)")
+    print("2. Subtract (-)")
+    print("3. Multiply (*)")
+    print("4. Divide (/)")
+    print("5. Power (^)")
+    print("6. Modulus (%)")
+    print("0. Exit")
+    print("-----------------------")
+
+def run_calculator():
+    """
+    Main function to run the interactive console calculator.
+    Allows users to perform operations continuously until they choose to exit.
+    """
+    operations = {
+        '1': ('+', add),
+        '2': ('-', subtract),
+        '3': ('*', multiply),
+        '4': ('/', divide),
+        '5': ('^', power),
+        '6': ('%', modulus)
+    }
+
+    print("Welcome to the Professional Python Calculator!")
+
+    while True:
+        display_menu()
+        choice = input("Enter your choice (0-6): ").strip()
+
+        if choice == '0':
+            print("Exiting calculator. Goodbye!")
+            sys.exit() # Exit the program cleanly
+
+        if choice in operations:
+            operator_symbol, operation_func = operations[choice]
+
+            num1 = get_numeric_input("Enter the first number: ")
+            num2 = get_numeric_input("Enter the second number: ")
+
+            result = operation_func(num1, num2)
+
+            # Check for specific error messages returned by division/modulus
+            if isinstance(result, str) and result.startswith("Error"):
+                print(result)
+            else:
+                print(f"Result: {num1} {operator_symbol} {num2} = {result}")
+        else:
+            print("Invalid choice. Please enter a number between 0 and 6.")
+
+# This ensures that run_calculator() is called only when the script is executed directly
+if __name__ == "__main__":
+    run_calculator()
