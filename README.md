@@ -16,7 +16,7 @@
 The objective of this project is to build a functional calculator application using Python. The aim is to develop a user-friendly tool that can perform basic arithmetic operations such as addition, subtraction, multiplication, and division.
 
 
-###Key Activities
+### Key Activities
 * User Interface Design: Designing a simple and intuitive interface for the calculator.
  * Functionality Implementation: Implementing the core logic for arithmetic operations.
  * Error Handling: Incorporating error handling for invalid inputs (e.g., division by zero).
