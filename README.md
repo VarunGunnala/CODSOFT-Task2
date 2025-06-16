@@ -1,8 +1,8 @@
-Name: Varun Gunnala
-Company: CodSoft IT SOLUTIONS
-ID: CS25RY46290
-Domain: python programming
-Duration: May to June 2025
+**Name:** Varun Gunnala
+**Company:** CodSoft IT SOLUTIONS
+**ID:** CS25RY46290
+**Domain:** python programming
+**Duration:** May to June 2025
 
 
 
@@ -25,5 +25,10 @@ The objective of this project is to build a functional calculator application us
 ### Technologies Used
  * Python: The primary programming language for building the calculator application.
  * Tkinter (or other GUI library if preferred): (Optional, if building a GUI) Used for creating the graphical user interface.
+
+#### Overview of the Project
+
+
+
 ![Screenshot 2025-06-16 195340](https://github.com/user-attachments/assets/a6f0bfb4-6628-4c83-a99c-d6efa07e5a26)
 
